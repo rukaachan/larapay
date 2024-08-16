@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:larapay/shared/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -89,7 +90,10 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
           // Center is a layout widget. It takes a single child and positions it
           // in the middle of the parent.
-          child: Image.asset('assets/img_logo_dark.png')),
+          child: Text(
+        'Testing Font',
+        style: greenTextStyle.copyWith(fontSize: 30),
+      )),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
