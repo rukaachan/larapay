@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:larapay/shared/theme.dart';
+import 'package:larapay/ui/pages/sign_in_page.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -101,9 +102,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 width: double.infinity,
                                 height: 50,
                                 child: TextButton(
-                                  onPressed: () {
-                                    carouselController.nextPage();
-                                  },
+                                  onPressed: () {},
                                   style: TextButton.styleFrom(
                                       backgroundColor: purpleColour,
                                       shape: RoundedRectangleBorder(
@@ -124,7 +123,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 height: 50,
                                 child: TextButton(
                                   onPressed: () {
-                                    carouselController.nextPage();
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const SignInPage()));
                                   },
                                   style: TextButton.styleFrom(
                                       padding: EdgeInsets.zero),
