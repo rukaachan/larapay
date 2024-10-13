@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:larapay/shared/theme.dart';
 import 'package:larapay/ui/pages/sign_in_page.dart';
+import 'package:larapay/ui/widgets/buttons.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -98,23 +99,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     currentCarousel == 2
                         ? Column(
                             children: [
-                              SizedBox(
-                                width: double.infinity,
-                                height: 50,
-                                child: TextButton(
-                                  onPressed: () {},
-                                  style: TextButton.styleFrom(
-                                      backgroundColor: purpleColour,
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(56))),
-                                  child: Text(
-                                    'Get Started',
-                                    style: whiteTextStyle.copyWith(
-                                        fontSize: 16, fontWeight: semiBold),
-                                  ),
-                                ),
-                              ),
+                              CustomFilledButton(
+                                  title: 'Get Started', onPressed: () {}),
                               const SizedBox(
                                 height: 15,
                               ),
