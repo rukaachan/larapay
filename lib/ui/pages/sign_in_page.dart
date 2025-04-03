@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:larapay/shared/theme.dart';
+import 'package:larapay/ui/widgets/buttons.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -87,38 +88,12 @@ class SignInPage extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                SizedBox(
-                  width: double.infinity,
-                  height: 50,
-                  child: TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                        backgroundColor: purpleColour,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(56))),
-                    child: Text(
-                      'Sign In',
-                      style: whiteTextStyle.copyWith(
-                          fontSize: 16, fontWeight: semiBold),
-                    ),
-                  ),
-                ),
+                CustomFilledButton(title: 'Sign In', onPressed: () {}),
               ],
             ),
           ),
           const SizedBox(height: 50),
-          SizedBox(
-            width: double.infinity,
-            height: 24,
-            child: TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(padding: EdgeInsets.zero),
-              child: Text(
-                'Create New Account',
-                style: greyTextStyle.copyWith(fontSize: 18),
-              ),
-            ),
-          ),
+          CustomTextButton(title: 'Create New Account', onPressed: () {}),
         ],
       ),
     );
