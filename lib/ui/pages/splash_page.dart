@@ -18,9 +18,9 @@ class _SplashPageState extends State<SplashPage> {
     // TODO: implement initState
     super.initState();
 
+    // Navigate to onboarding page
     Timer(const Duration(seconds: 2), () {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => const OnboardingPage()));
+      Navigator.pushNamed(context, '/onboarding');
     });
   }
 
