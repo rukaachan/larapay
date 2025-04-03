@@ -3,8 +3,8 @@ import 'package:larapay/shared/theme.dart';
 import 'package:larapay/ui/widgets/buttons.dart';
 import 'package:larapay/ui/widgets/forms.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+class SignUpSetProfilePage extends StatelessWidget {
+  const SignUpSetProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,33 +35,45 @@ class SignUpPage extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20), color: whiteColour),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // FUll NAME INPUT
-                const CustomFormField(titlle: 'Full Name'),
-                const SizedBox(height: 16),
-                // EMAIL INPUT
-                const CustomFormField(titlle: 'Email Address'),
-                const SizedBox(height: 16),
-                // PASSWORD INPUT
-                const CustomFormField(titlle: 'Password', obscureText: true),
+                Container(
+                  width: 120,
+                  height: 120,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle, color: lightBackgroundColour),
+                  child: Center(
+                    child: Image.asset(
+                      'assets/ic_upload.png',
+                      width: 32,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Text('Rizka Familia',
+                    style: blackTextStyle.copyWith(
+                        fontSize: 18, fontWeight: medium)),
+                const SizedBox(
+                  height: 30,
+                ),
+                const CustomFormField(
+                  titlle: 'Set PIN (6 Digit Number)',
+                  obscureText: true,
+                ),
                 const SizedBox(
                   height: 30,
                 ),
                 CustomFilledButton(
                     title: 'Continue',
                     onPressed: () {
-                      Navigator.pushNamed(context, '/sign-up-set-profile');
+                      Navigator.pushNamed(context, '/sign-up-set-ktp');
                     }),
               ],
             ),
           ),
           const SizedBox(height: 50),
-          CustomTextButton(
-              title: 'Sign In',
-              onPressed: () {
-                Navigator.pushNamed(context, '/sign-in');
-              }),
         ],
       ),
     );
