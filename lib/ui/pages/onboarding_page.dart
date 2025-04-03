@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:larapay/shared/theme.dart';
 import 'package:larapay/ui/pages/sign_in_page.dart';
 import 'package:larapay/ui/widgets/buttons.dart';
+import 'package:larapay/ui/widgets/carousel.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:larapay/shared/theme.dart';
 import 'package:larapay/ui/widgets/buttons.dart';
+import 'package:larapay/ui/widgets/forms.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -37,45 +38,10 @@ class SignInPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // EMAIL INPUT
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Email Address',
-                      style: blackTextStyle.copyWith(fontWeight: medium),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(18)),
-                          contentPadding: const EdgeInsets.all(12)),
-                    )
-                  ],
-                ),
+                const CustomFormField(titlle: 'Email Address'),
                 const SizedBox(height: 20),
                 // PASSWORD INPUT
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Password',
-                      style: blackTextStyle.copyWith(fontWeight: medium),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    TextFormField(
-                      obscureText: true, // Hide Password
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(18)),
-                          contentPadding: const EdgeInsets.all(12)),
-                    )
-                  ],
-                ),
+                const CustomFormField(titlle: 'Password', obscureText: true),
                 const SizedBox(
                   height: 8,
                 ),
