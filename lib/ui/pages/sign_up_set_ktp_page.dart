@@ -1,7 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:larapay/shared/theme.dart';
 import 'package:larapay/ui/widgets/buttons.dart';
-import 'package:larapay/ui/widgets/forms.dart';
 
 class SignUpSetKtpPage extends StatelessWidget {
   const SignUpSetKtpPage({super.key});

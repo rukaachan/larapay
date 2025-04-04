@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:larapay/shared/theme.dart';
-import 'package:larapay/ui/pages/sign_in_page.dart';
 import 'package:larapay/ui/widgets/buttons.dart';
 import 'package:larapay/ui/widgets/carousel.dart';
 
@@ -103,7 +102,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                               CustomFilledButton(
                                   title: 'Get Started',
                                   onPressed: () {
-                                    Navigator.pushNamed(context, '/sign-up');
+                                    Navigator.pushNamedAndRemoveUntil(
+                                        context, '/sign-up', (route) => false);
                                   }),
                               const SizedBox(
                                 height: 15,
@@ -112,9 +112,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 title: 'Sign In',
                                 onPressed: () {
                                   // Navigate to sign in page
-                                  Navigator.pushNamed(
+                                  Navigator.pushNamedAndRemoveUntil(
                                     context,
                                     '/sign-in',
+                                    (route) => false,
                                   );
                                 },
                               ),

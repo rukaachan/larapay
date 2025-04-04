@@ -54,12 +54,22 @@ class SignInPage extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                CustomFilledButton(title: 'Sign In', onPressed: () {}),
+                CustomFilledButton(
+                    title: 'Sign In',
+                    onPressed: () {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, '/home', (route) => false);
+                    }),
               ],
             ),
           ),
           const SizedBox(height: 50),
-          CustomTextButton(title: 'Create New Account', onPressed: () {}),
+          CustomTextButton(
+              title: 'Create New Account',
+              onPressed: () {
+                Navigator.pushNamedAndRemoveUntil(
+                    context, '/sign-up', (route) => false);
+              }),
         ],
       ),
     );

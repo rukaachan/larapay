@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:larapay/shared/theme.dart';
-import 'package:larapay/ui/pages/onboarding_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -20,7 +19,10 @@ class _SplashPageState extends State<SplashPage> {
 
     // Navigate to onboarding page
     Timer(const Duration(seconds: 2), () {
-      Navigator.pushNamed(context, '/onboarding');
+      // Remove splash page, and navigate to onboarding page
+      // Remove all previous page
+      Navigator.pushNamedAndRemoveUntil(
+          context, '/onboarding', (route) => false);
     });
   }
 
