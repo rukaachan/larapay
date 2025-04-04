@@ -71,6 +71,65 @@ class HomePage extends StatelessWidget {
             width: 24,
           )),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      body: ListView(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        children: [buildProfile()],
+      ),
+    );
+  }
+
+  // Widget for top profile
+  Widget buildProfile() {
+    return Container(
+      margin: const EdgeInsets.only(top: 40),
+      child: Row(
+        // Align the profile image to the right or just make it space betweeen
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Howdy',
+                style: greyTextStyle.copyWith(fontSize: 16),
+              ),
+              const SizedBox(
+                height: 2,
+              ),
+              Text(
+                'Username',
+                style:
+                    blackTextStyle.copyWith(fontSize: 20, fontWeight: semiBold),
+              )
+            ],
+          ),
+          Container(
+              width: 60,
+              height: 60,
+              decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                      image: AssetImage('assets/img_profile.png'))),
+              // Add a check circle icon on the top right of the profile image
+              child: Align(
+                alignment: Alignment.topRight,
+                child: Container(
+                  width: 16,
+                  height: 16,
+                  // Give the box a white background and a green check circle
+                  decoration:
+                      BoxDecoration(shape: BoxShape.circle, color: whiteColour),
+                  child: Center(
+                    child: Icon(
+                      Icons.check_circle,
+                      color: greenColour,
+                      size: 14,
+                    ),
+                  ),
+                ),
+              ))
+        ],
+      ),
     );
   }
 }
