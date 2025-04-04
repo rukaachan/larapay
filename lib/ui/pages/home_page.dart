@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:larapay/shared/theme.dart";
+import "package:larapay/ui/widgets/home_service_item.dart";
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -73,7 +74,12 @@ class HomePage extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
-        children: [buildProfile(), buildWalletCard()],
+        children: [
+          buildProfile(),
+          buildWalletCard(),
+          buildLevel(),
+          buildServices()
+        ],
       ),
     );
   }
@@ -168,6 +174,91 @@ class HomePage extends StatelessWidget {
           Text(
             'Rp. 12.500',
             style: whiteTextStyle.copyWith(fontSize: 24, fontWeight: semiBold),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget buildLevel() {
+    return Container(
+      margin: const EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.all(22),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20), color: whiteColour),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Text(
+                'Level 1',
+                style: blackTextStyle.copyWith(fontWeight: medium),
+              ),
+              const Spacer(),
+              Text(
+                '55% ',
+                style: greenTextStyle.copyWith(fontWeight: semiBold),
+              ),
+              Text(
+                'of Rp 20.000',
+                style: blackTextStyle.copyWith(fontWeight: semiBold),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          // ClipRRect to make the border radius of the progress bar
+          ClipRRect(
+            borderRadius: BorderRadius.circular(55),
+            // Line Progress
+            child: LinearProgressIndicator(
+              value: 0.55,
+              minHeight: 5,
+              valueColor: AlwaysStoppedAnimation(greenColour),
+              backgroundColor: lightBackgroundColour,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget buildServices() {
+    return Container(
+      margin: const EdgeInsets.only(top: 30),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Do Something',
+            style: blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+          ),
+          const SizedBox(
+            height: 14,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              HomeServiceItem(
+                iconUrl: 'assets/ic_topup.png',
+                title: 'Topup',
+                onTap: () {},
+              ),
+              HomeServiceItem(
+                iconUrl: 'assets/ic_send.png',
+                title: 'Send',
+                onTap: () {},
+              ),
+              HomeServiceItem(
+                iconUrl: 'assets/ic_withdraw.png',
+                title: 'Withdraw',
+                onTap: () {},
+              ),
+              HomeServiceItem(
+                iconUrl: 'assets/ic_more.png',
+                title: 'More',
+                onTap: () {},
+              ),
+            ],
           )
         ],
       ),
