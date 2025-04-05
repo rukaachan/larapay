@@ -2,6 +2,8 @@ import "package:flutter/material.dart";
 import "package:larapay/shared/theme.dart";
 import "package:larapay/ui/widgets/home_latest_transactions_item.dart";
 import "package:larapay/ui/widgets/home_service_item.dart";
+import "package:larapay/ui/widgets/home_tips_item.dart";
+import "package:larapay/ui/widgets/home_user_item.dart";
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -80,7 +82,9 @@ class HomePage extends StatelessWidget {
           buildWalletCard(),
           buildLevel(),
           buildServices(),
-          buildLatestTransactions()
+          buildLatestTransactions(),
+          buildSendAgain(),
+          buildFriendlyTips()
         ],
       ),
     );
@@ -314,6 +318,84 @@ class HomePage extends StatelessWidget {
                     value: '- 12.300.000'),
               ],
             ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget buildSendAgain() {
+    return Container(
+      margin: const EdgeInsets.only(top: 30),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Send Again',
+            style: blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+          ),
+          const SizedBox(
+            height: 14,
+          ),
+          // Row is not design for scrolling
+          // So we need to use SingleChildScrollView
+          const SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                HomeUserItem(
+                    imageUrl: 'assets/img_friend1.png', username: 'chila'),
+                HomeUserItem(
+                    imageUrl: 'assets/img_friend2.png', username: 'rizka'),
+                HomeUserItem(
+                    imageUrl: 'assets/img_friend3.png', username: 'fahrizal'),
+                HomeUserItem(
+                    imageUrl: 'assets/img_friend4.png', username: 'kanfi')
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget buildFriendlyTips() {
+    return Container(
+      margin: const EdgeInsets.only(top: 30, bottom: 50),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Friendly Tips',
+            style: blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+          ),
+          const SizedBox(
+            height: 14,
+          ),
+          const Wrap(
+            spacing: 40,
+            runSpacing: 20,
+            children: [
+              HomeTipsItem(
+                  imageUrl: 'assets/img_tips1.png',
+                  title: 'Best tips for using a credit card',
+                  url:
+                      'https://www.capitalone.com/learn-grow/money-management/tips-using-credit-responsibly/'),
+              HomeTipsItem(
+                  imageUrl: 'assets/img_tips2.png',
+                  title: 'Spot the good pie of finance model',
+                  url: 'https://moneywise.com/investing/best-m1-finance-pies'),
+              HomeTipsItem(
+                  imageUrl: 'assets/img_tips3.png',
+                  title: 'Great hack to get better advices',
+                  url:
+                      'https://www.buzzfeed.com/hannahloewentheil/24-wish-i-knew-this-yesterday-life-hacks-that-changed'),
+              HomeTipsItem(
+                  imageUrl: 'assets/img_tips4.png',
+                  title: 'Save more penny buy this instead',
+                  url:
+                      'https://bennisinc.wordpress.com/2013/01/28/a-penny-saved-is-more-than-a-penny-earned/'),
+            ],
           )
         ],
       ),
