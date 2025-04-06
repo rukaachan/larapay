@@ -3,14 +3,14 @@ import 'package:larapay/shared/theme.dart';
 import 'package:larapay/ui/widgets/buttons.dart';
 import 'package:larapay/ui/widgets/forms.dart';
 
-class ProfileEditPage extends StatelessWidget {
-  const ProfileEditPage({super.key});
+class ProfileEditPinPage extends StatelessWidget {
+  const ProfileEditPinPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Edit Profile'),
+        title: const Text('Edit Pin'),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -25,17 +25,11 @@ class ProfileEditPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // USERNAME INPUT
-                const CustomFormField(title: 'Username'),
+                // OLD PIN INPUT
+                const CustomFormField(title: 'Old PIN'),
                 const SizedBox(height: 16),
-                // FULL NAME INPUT
-                const CustomFormField(title: 'Full Name'),
-                const SizedBox(height: 16),
-                // EMAIL ADDRESS INPUT
-                const CustomFormField(title: 'Email Address'),
-                const SizedBox(height: 16),
-                // PASSWORD INPUT
-                const CustomFormField(title: 'Password', obscureText: true),
+                // NEW PIN INPUT
+                const CustomFormField(title: 'New PIN'),
                 const SizedBox(
                   height: 30,
                 ),
@@ -44,7 +38,7 @@ class ProfileEditPage extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushNamedAndRemoveUntil(
                           context, '/profile-edit-success', (route) => false);
-                    }),
+                    })
               ],
             ),
           ),

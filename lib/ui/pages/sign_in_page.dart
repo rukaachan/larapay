@@ -37,10 +37,10 @@ class SignInPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // EMAIL INPUT
-                const CustomFormField(titlle: 'Email Address'),
+                const CustomFormField(title: 'Email Address'),
                 const SizedBox(height: 20),
                 // PASSWORD INPUT
-                const CustomFormField(titlle: 'Password', obscureText: true),
+                const CustomFormField(title: 'Password', obscureText: true),
                 const SizedBox(
                   height: 8,
                 ),

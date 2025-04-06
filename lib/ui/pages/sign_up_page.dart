@@ -37,13 +37,13 @@ class SignUpPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // FUll NAME INPUT
-                const CustomFormField(titlle: 'Full Name'),
+                const CustomFormField(title: 'Full Name'),
                 const SizedBox(height: 16),
                 // EMAIL INPUT
-                const CustomFormField(titlle: 'Email Address'),
+                const CustomFormField(title: 'Email Address'),
                 const SizedBox(height: 16),
                 // PASSWORD INPUT
-                const CustomFormField(titlle: 'Password', obscureText: true),
+                const CustomFormField(title: 'Password', obscureText: true),
                 const SizedBox(
                   height: 30,
                 ),

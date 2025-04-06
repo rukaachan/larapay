@@ -75,10 +75,16 @@ class ProfilePage extends StatelessWidget {
                     }
                   },
                 ),
-                const ProfileMenuItem(
+                ProfileMenuItem(
                   iconUrl: 'assets/ic_pin.png',
                   title: 'My Pin',
-                  onTap: null,
+                  onTap: () async {
+                    if (await Navigator.pushNamed(context, '/pin') == true) {
+                      // Add mounted check here
+                      if (!context.mounted) return;
+                      Navigator.pushNamed(context, '/profile-edit-pin');
+                    }
+                  },
                 ),
                 const ProfileMenuItem(
                   iconUrl: 'assets/ic_wallet.png',
