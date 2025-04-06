@@ -31,130 +31,127 @@ class _OnboardingPageState extends State<OnboardingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: lightBackgroundColour,
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Created Slider
-              CarouselSlider(
-                items: [
-                  Image.asset(
-                    'assets/img_onboarding1.png',
-                    height: 331,
-                  ),
-                  Image.asset(
-                    'assets/img_onboarding2.png',
-                    height: 331,
-                  ),
-                  Image.asset(
-                    'assets/img_onboarding3.png',
-                    height: 331,
-                  ),
-                ],
-                carouselController: carouselController,
-                options: CarouselOptions(
-                  height: 331,
-                  viewportFraction: 1,
-                  enableInfiniteScroll: false,
-                  onPageChanged: (index, reason) {
-                    setState(() {
-                      currentCarousel = index;
-                    });
-                  },
-                ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          // Created Slider
+          CarouselSlider(
+            items: [
+              Image.asset(
+                'assets/img_onboarding1.png',
+                height: 331,
               ),
-              // Create Box-
-              const SizedBox(
-                height: 20,
+              Image.asset(
+                'assets/img_onboarding2.png',
+                height: 331,
               ),
-              Container(
-                margin: const EdgeInsets.symmetric(horizontal: 24),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 22, vertical: 24),
-                decoration: BoxDecoration(
-                    color: whiteColour,
-                    borderRadius: BorderRadius.circular(30)),
-                child: Column(
-                  children: [
-                    Text(
-                      titles[currentCarousel],
-                      style: blackTextStyle.copyWith(
-                        fontSize: 20,
-                        fontWeight: semiBold,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(
-                      height: 26,
-                    ),
-                    Text(
-                      subtitles[currentCarousel],
-                      style: greyTextStyle.copyWith(fontSize: 16),
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(
-                      height: currentCarousel == 2 ? 38 : 50,
-                    ),
-                    currentCarousel == 2
-                        ? Column(
-                            children: [
-                              CustomFilledButton(
-                                  title: 'Get Started',
-                                  onPressed: () {
-                                    Navigator.pushNamedAndRemoveUntil(
-                                        context, '/sign-up', (route) => false);
-                                  }),
-                              const SizedBox(
-                                height: 15,
-                              ),
-                              CustomTextButton(
-                                title: 'Sign In',
-                                onPressed: () {
-                                  // Navigate to sign in page
-                                  Navigator.pushNamedAndRemoveUntil(
-                                    context,
-                                    '/sign-in',
-                                    (route) => false,
-                                  );
-                                },
-                              ),
-                            ],
-                          )
-                        : Row(
-                            children: [
-                              CarouselIndicator(
-                                currentIndex: currentCarousel,
-                                index: 0,
-                                activeColor: blueColour,
-                                inactiveColor: lightBackgroundColour,
-                              ),
-                              CarouselIndicator(
-                                currentIndex: currentCarousel,
-                                index: 1,
-                                activeColor: blueColour,
-                                inactiveColor: lightBackgroundColour,
-                              ),
-                              CarouselIndicator(
-                                currentIndex: currentCarousel,
-                                index: 2,
-                                activeColor: blueColour,
-                                inactiveColor: lightBackgroundColour,
-                              ),
-                              const Spacer(),
-                              CustomFilledButton(
-                                  width: 150,
-                                  title: 'Continue',
-                                  onPressed: () {
-                                    carouselController.nextPage();
-                                  }),
-                            ],
-                          )
-                  ],
-                ),
+              Image.asset(
+                'assets/img_onboarding3.png',
+                height: 331,
               ),
             ],
+            carouselController: carouselController,
+            options: CarouselOptions(
+              height: 331,
+              viewportFraction: 1,
+              enableInfiniteScroll: false,
+              onPageChanged: (index, reason) {
+                setState(() {
+                  currentCarousel = index;
+                });
+              },
+            ),
           ),
-        ));
+          // Create Box-
+          const SizedBox(
+            height: 20,
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 24),
+            decoration: BoxDecoration(
+                color: whiteColour, borderRadius: BorderRadius.circular(30)),
+            child: Column(
+              children: [
+                Text(
+                  titles[currentCarousel],
+                  style: blackTextStyle.copyWith(
+                    fontSize: 20,
+                    fontWeight: semiBold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(
+                  height: 26,
+                ),
+                Text(
+                  subtitles[currentCarousel],
+                  style: greyTextStyle.copyWith(fontSize: 16),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(
+                  height: currentCarousel == 2 ? 38 : 50,
+                ),
+                currentCarousel == 2
+                    ? Column(
+                        children: [
+                          CustomFilledButton(
+                              title: 'Get Started',
+                              onPressed: () {
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context, '/sign-up', (route) => false);
+                              }),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          CustomTextButton(
+                            title: 'Sign In',
+                            onPressed: () {
+                              // Navigate to sign in page
+                              Navigator.pushNamedAndRemoveUntil(
+                                context,
+                                '/sign-in',
+                                (route) => false,
+                              );
+                            },
+                          ),
+                        ],
+                      )
+                    : Row(
+                        children: [
+                          CarouselIndicator(
+                            currentIndex: currentCarousel,
+                            index: 0,
+                            activeColor: blueColour,
+                            inactiveColor: lightBackgroundColour,
+                          ),
+                          CarouselIndicator(
+                            currentIndex: currentCarousel,
+                            index: 1,
+                            activeColor: blueColour,
+                            inactiveColor: lightBackgroundColour,
+                          ),
+                          CarouselIndicator(
+                            currentIndex: currentCarousel,
+                            index: 2,
+                            activeColor: blueColour,
+                            inactiveColor: lightBackgroundColour,
+                          ),
+                          const Spacer(),
+                          CustomFilledButton(
+                              width: 150,
+                              title: 'Continue',
+                              onPressed: () {
+                                carouselController.nextPage();
+                              }),
+                        ],
+                      )
+              ],
+            ),
+          ),
+        ],
+      ),
+    ));
   }
 }

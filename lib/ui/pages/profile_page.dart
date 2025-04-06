@@ -9,15 +9,9 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: lightBackgroundColour,
       appBar: AppBar(
-        backgroundColor: lightBackgroundColour,
-        elevation: 0,
-        centerTitle: true,
-        iconTheme: IconThemeData(color: blackColor),
-        title: Text(
+        title: const Text(
           'My Profile',
-          style: blackTextStyle.copyWith(fontSize: 20, fontWeight: semiBold),
         ),
       ),
       body: ListView(
@@ -70,10 +64,12 @@ class ProfilePage extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
-                const ProfileMenuItem(
+                ProfileMenuItem(
                   iconUrl: 'assets/ic_edit_profile.png',
                   title: 'Edit Profile',
-                  onTap: null,
+                  onTap: () {
+                    Navigator.pushNamed(context, '/pin');
+                  },
                 ),
                 const ProfileMenuItem(
                   iconUrl: 'assets/ic_pin.png',

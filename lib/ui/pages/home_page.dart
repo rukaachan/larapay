@@ -11,8 +11,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: lightBackgroundColour,
-
       // List of items in the bottom navigation bar
       bottomNavigationBar: BottomAppBar(
         color: whiteColour,

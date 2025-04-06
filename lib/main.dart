@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:larapay/shared/theme.dart';
 import 'package:larapay/ui/pages/home_page.dart';
 import 'package:larapay/ui/pages/onboarding_page.dart';
+import 'package:larapay/ui/pages/pin_page.dart';
 import 'package:larapay/ui/pages/profile_page.dart';
 import 'package:larapay/ui/pages/sign_in_page.dart';
 import 'package:larapay/ui/pages/sign_up_page.dart';
@@ -18,6 +20,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          scaffoldBackgroundColor: lightBackgroundColour,
+          appBarTheme: AppBarTheme(
+            backgroundColor: lightBackgroundColour,
+            elevation: 0,
+            centerTitle: true,
+            iconTheme: IconThemeData(color: blackColor),
+            titleTextStyle:
+                blackTextStyle.copyWith(fontSize: 20, fontWeight: semiBold),
+          )),
 
       // Initial route, can be handle multiple routes
       routes: {
@@ -30,6 +42,7 @@ class MyApp extends StatelessWidget {
         '/sign-up-success': (context) => const SignUpSuccessPage(),
         '/home': (context) => const HomePage(),
         '/profile': (context) => const ProfilePage(),
+        '/pin': (context) => const PinPage(),
       },
     );
   }
