@@ -78,7 +78,7 @@ class HomePage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
-          buildProfile(),
+          buildProfile(context),
           buildWalletCard(),
           buildLevel(),
           buildServices(),
@@ -91,7 +91,7 @@ class HomePage extends StatelessWidget {
   }
 
   // Widget for top profile
-  Widget buildProfile() {
+  Widget buildProfile(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 40),
       child: Row(
@@ -115,31 +115,36 @@ class HomePage extends StatelessWidget {
               )
             ],
           ),
-          Container(
-              width: 60,
-              height: 60,
-              decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                      image: AssetImage('assets/img_profile.png'))),
-              // Add a check circle icon on the top right of the profile image
-              child: Align(
-                alignment: Alignment.topRight,
-                child: Container(
-                  width: 16,
-                  height: 16,
-                  // Give the box a white background and a green check circle
-                  decoration:
-                      BoxDecoration(shape: BoxShape.circle, color: whiteColour),
-                  child: Center(
-                    child: Icon(
-                      Icons.check_circle,
-                      color: greenColour,
-                      size: 14,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/profile');
+            },
+            child: Container(
+                width: 60,
+                height: 60,
+                decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                        image: AssetImage('assets/img_profile.png'))),
+                // Add a check circle icon on the top right of the profile image
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child: Container(
+                    width: 16,
+                    height: 16,
+                    // Give the box a white background and a green check circle
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle, color: whiteColour),
+                    child: Center(
+                      child: Icon(
+                        Icons.check_circle,
+                        color: greenColour,
+                        size: 14,
+                      ),
                     ),
                   ),
-                ),
-              ))
+                )),
+          )
         ],
       ),
     );
