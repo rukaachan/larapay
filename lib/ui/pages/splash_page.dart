@@ -14,7 +14,6 @@ class _SplashPageState extends State<SplashPage> {
   // will be run first when splash page is action
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     // Navigate to onboarding page
