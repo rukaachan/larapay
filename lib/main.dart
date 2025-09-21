@@ -13,6 +13,9 @@ import 'package:larapay/ui/pages/sign_up_set_ktp_page.dart';
 import 'package:larapay/ui/pages/sign_up_set_profile_page.dart';
 import 'package:larapay/ui/pages/sign_up_success_page.dart';
 import 'package:larapay/ui/pages/splash_page.dart';
+import 'package:larapay/ui/pages/topup_amount_page.dart';
+import 'package:larapay/ui/pages/topup_page.dart';
+import 'package:larapay/ui/pages/topup_success.dart';
 
 void main() => runApp(const MyApp());
 
@@ -48,7 +51,10 @@ class MyApp extends StatelessWidget {
         '/pin': (context) => const PinPage(),
         '/profile-edit': (context) => const ProfileEditPage(),
         '/profile-edit-pin': (context) => const ProfileEditPinPage(),
-        '/profile-edit-success': (context) => const ProfileEditSuccessPage()
+        '/profile-edit-success': (context) => const ProfileEditSuccessPage(),
+        '/top-up': (context) => const TopUpPage(),
+        '/topup-amount': (context) => const TopUpAmountPage(),
+        '/topup-success': (context) => const TopUpSuccess()
       },
     );
   }
